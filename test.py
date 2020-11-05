@@ -7,9 +7,9 @@ rock, paper, scissors = np.identity(3)
 def play(a, b):
     """
     returns whether the player playing 'a' wins or not:
-        +1 means he/she wins
-        0 means its a tie
-        -1 means he/she loses
+        +1 means he/she wins.
+        0 means its a draw.
+        -1 means he/she loses.
     """
     return np.dot(np.cross(b, a), 1 - a - b)
 
