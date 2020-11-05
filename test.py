@@ -4,19 +4,19 @@ import numpy as np
 
 rock, paper, scissors = np.identity(3)
 
-def play(a, b):
+def f(a, b):
     """
-    returns whether the player playing 'a' wins or not:
-        +1 means he/she wins.
-        0 means its a draw.
-        -1 means he/she loses.
+    a is your hand.
+    b is the opponent's hand.
+    f(a,b) = 1 means you win.
+    f(a,b) = 0 means a draw.
+    f(a,b) = -1 means you lose.
     """
     return np.dot(np.cross(b, a), 1 - a - b)
 
 def test_play(a, b, actual):
-    pred = play(a, b)
-    correct = pred == actual
-    print(f"{a=} {b=} {pred=} {actual=} {correct=}")
+    correct = f(a, b) == actual
+    print(f"{a=} {b=} {f(a, b)=} {actual=} {correct=}")
     return correct
 
 a = [
@@ -33,3 +33,4 @@ a = [
 
 if all(a):
     print("All tests passed")
+
